@@ -1,0 +1,40 @@
+#myVideo {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+}
+
+.signup {
+  color: white;
+  width: 500px;
+  padding: 10px;
+  position: absolute;
+  font-size: 20px;
+  top: 10%;
+  right: 50px;
+  line-height: 40px;
+  border-radius: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+input {
+  height: 30px;
+  width: 98%;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  height: 50px;
+  width: 120px;
+  color: white;
+  font-size: 25px;
+  background-color: rgb(67, 197, 69);
+} 
+.inp{
+    width: 300px;
+}
