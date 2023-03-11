@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="styles/complaint.css">
+  </head>
+  <body>
+    <header>
+      <h1>Raise a Query!</h1>
+      <p>
+        Read below instructions before proceeding:<br />
+        Make sure you fill all the fileds where * is provided
+      </p>
+    </header>
+    <section>
+      <form action="">
+        <table>
+          <tr>
+            <td><label for="Name">Name :- </label></td>
+            <td><input type="text" name="name" required /></td>
+          </tr>
+          <tr>
+            <td><label for="phoneNumber">Phone Number :- </label></td>
+            <td>
+              <input type="number" min="6000000000" max="9999999999" required />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="Email">Email :- </label></td>
+            <td><input type="email" required /></td>
+          </tr>
+          <tr>
+            <td><label for="address">Address :- </label></td>
+            <td>
+              <table>
+                <tr>
+                  <td>House No:-</td>
+                  <td><input type="text" required /></td>
+                </tr>
+                <tr>
+                  <td>Street:-</td>
+                  <td><input type="text" required /></td>
+                </tr>
+                <tr>
+                  <td>Area:-</td>
+                  <td><input type="text" required /></td>
+                </tr>
+                <tr>
+                  <td>PIN Code:-</td>
+                  <td><input type="number" required /></td>
+                </tr>
+                <tr>
+                  <td>District</td>
+                  <td>
+                    <select name="district" id="district" required>
+                      <option value="">Choose</option>
+                      <option value="Bangalore Urban">Bangalore Urban</option>
+                      <option value="Bangalore Rural">Bangalore Rural</option>
+                      <option value="Ramanagar">Ramanagar</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="IssueType">Issue Type</label></td>
+            <!-- <td><p>Check atleast one issue type</p></td> -->
+            <td>
+              <input type="checkbox" id="c1" name="opt1" value="Wrong News" />
+              <label>Wrong News</label>
+
+              <input
+                type="checkbox"
+                id="c2"
+                name="opt1"
+                value="Paper Not issued"
+              />
+              <label>Paper Not issued</label>
+
+              <input
+                type="checkbox"
+                id="c2"
+                name="opt1"
+                value="Paper Boy Misbehaviour"
+              />
+              <label>Paper Boy Misbehaviour</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="IssueType">Do you have digital subscription?</label>
+            </td>
+
+            <td>
+              <input type="radio" id="r1" name="option" value="True" required />
+              <label>Yes</label>
+              <input
+                type="radio"
+                id="r2"
+                name="option"
+                value="False"
+                required
+              />
+              <label>No</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Describe your issue!</td>
+            <td>
+              <textarea name="description" id="" cols="30" rows="5"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="Submit" /></td>
+            <td><input type="reset" value="Rest All Fields" /></td>
+          </tr>
+        </table>
+      </form>
+    </section>
+    <footer>This is dummy form developed by Great learning team.</footer>
+  </body>
+</html>

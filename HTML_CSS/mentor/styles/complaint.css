@@ -1,0 +1,66 @@
+body {
+  background-color: rgb(253, 243, 223);
+}
+
+header {
+  border-radius: 5px;
+  height: auto;
+  text-align: center;
+  background-color: rgb(192, 153, 235);
+}
+
+footer {
+  position: absolute;
+  font-size: 20px;
+  background-color: rgb(192, 153, 235);
+  border-radius: 5px;
+  padding: 10px;
+  width: 98%;
+  bottom: 1%;
+}
+
+p,
+h1 {
+  padding: 10px;
+  margin: 0%;
+}
+
+tr {
+  border: 1px solid white;
+  background-color: white;
+}
+
+input[type="text"] {
+  width: 300px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 50px;
+}
+
+input {
+  border: none;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  height: 30px;
+}
+input,
+label,
+h3 {
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  display: block;
+  margin: 20px;
+  width: 180px;
+  border-radius: 10px;
+  height: 30px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: rgb(192, 153, 235);
+}
