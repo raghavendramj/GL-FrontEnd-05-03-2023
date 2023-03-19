@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+  </head>
+  <body>
+    <header>
+      <h1>Advanced Calculator</h1>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div id="display"></div>
+          <div class="buttons">
+            <!-- Row 1 -->
+            <div class="button" onclick="clear()">C</div>
+            <div class="button" onclick="addCharacter('(')">(</div>
+            <div class="button" onclick="addCharacter(')')">)</div>
+            <div class="button" onclick="deleteCharacter()">DEL</div>
+
+            <!-- Row 2 -->
+            <div class="button" onclick="addCharacter('7')">7</div>
+            <div class="button" onclick="addCharacter('8')">8</div>
+            <div class="button" onclick="addCharacter('9')">9</div>
+            <div class="button" onclick="addCharacter('/')">/</div>
+
+            <!-- Row 3 -->
+            <div class="button" onclick="addCharacter('4')">4</div>
+            <div class="button" onclick="addCharacter('5')">5</div>
+            <div class="button" onclick="addCharacter('6')">6</div>
+            <div class="button" onclick="addCharacter('*')">*</div>
+
+            <!-- Row 4 -->
+            <div class="button" onclick="addCharacter('1')">1</div>
+            <div class="button" onclick="addCharacter('2')">2</div>
+            <div class="button" onclick="addCharacter('3')">3</div>
+            <div class="button" onclick="addCharacter('+')">+</div>
+
+            <!-- Row 5 -->
+            <div class="button" onclick="addCharacter('0')">0</div>
+            <div class="button" onclick="addCharacter('.')">.</div>
+            <div class="button" onclick="addCharacter('-')">-</div>
+            <div class="button" id="equals" onclick="compute()">=</div>
+
+            <!-- Row 6 -->
+            <div class="button" onclick="sqaure()">Sq</div>
+            <div class="button" onclick="exponent()">exp</div>
+            <div class="button" onclick="log()">ln</div>
+            <div class="button" onclick="addCharacter('+')">Sqrt</div>
+
+            <!-- Row 7 -->
+            <div class="button" onclick="cos()">cos</div>
+            <div class="button" onclick="sin()">sin</div>
+            <div class="button" onclick="tan()">tan</div>
+            <div class="button" onclick="cube()">cube</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="calculator.js"></script>
+    <footer>
+      <div>@Copyrights reserved, Only for demo purposes</div>
+    </footer>
+  </body>
+</html>
