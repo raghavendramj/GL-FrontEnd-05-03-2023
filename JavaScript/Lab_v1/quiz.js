@@ -5,7 +5,7 @@ function Quiz(questions) {
   this.questions = questions;
 }
 
-Quiz.prototype.getQuestion = function () {
+Quiz.prototype.getCurrentQuestionIndex = function () {
   return this.questions[this.currQuestIndex];
 };
 
@@ -18,7 +18,7 @@ Quiz.prototype.isEnded = function () {
 // 2. Update the score
 // 3. Increment the current index
 Quiz.prototype.validateAnswerAndUpdateScore = function (choice) {
-  let question = this.getQuestion();
+  let question = this.getCurrentQuestionIndex();
   if (question.answer === choice) {
     this.score++;
   }
@@ -42,6 +42,11 @@ let questions = [
     ["Piegon", "Peocock", "Koyal", "Crow"],
     "Peocock"
   ),
+  new Question(
+    "Which is not a JavaScript Framework?",
+    ["Python Script", "JQuery","Django", "NodeJS"],
+    "Django"
+  )
 ];
 
 function showScores() {
@@ -58,18 +63,20 @@ function loadQuestions() {
     showScores();
   } else {
     //Show current question!
-    let questionEle = document.getElementById("question");
-    let curQuest = quiz.getQuestion();
-    questionEle.innerHTML = curQuest.text;
+    let curQuest = quiz.getCurrentQuestionIndex();
+    if (curQuest.text) {
+      let questionEle = document.getElementById("question");
+      questionEle.innerHTML = curQuest.text;
 
-    //Show current question's options
-    let options = quiz.getQuestion().options;
-    for (var i = 0; i < options.length; i++) {
-      let currOption = options[i];
-      let eachOptElement = document.getElementById("choice" + i);
-      eachOptElement.innerHTML = currOption;
-      handleOptionBtn("btn" + i, currOption);
-    }
+      //Show current question's options
+      let options = curQuest.options;
+      for (var i = 0; i < options.length; i++) {
+        let currOption = options[i];
+        let eachOptElement = document.getElementById("choice" + i);
+        eachOptElement.innerHTML = currOption;
+        handleOptionBtn("btn" + i, currOption);
+      }
+    } 
     showProgress();
   }
 }
@@ -82,10 +89,10 @@ function showProgress() {
 
 function handleOptionBtn(btnId, choice) {
   let btn = document.getElementById(btnId);
-  btn.addEventListener("click", () => {
+  btn.onclick = () => {
     quiz.validateAnswerAndUpdateScore(choice);
     loadQuestions();
-  });
+  };
 }
 
 let quiz = new Quiz(questions);
