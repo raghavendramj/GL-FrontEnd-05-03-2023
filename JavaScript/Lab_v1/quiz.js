@@ -10,7 +10,7 @@ Quiz.prototype.getQuestion = function () {
 };
 
 Quiz.prototype.isEnded = function () {
-  return this.currQuestIndex === this.questions.length - 1;
+  return this.currQuestIndex === this.questions.length;
 };
 
 //Function will 3 things
@@ -46,6 +46,11 @@ let questions = [
 
 function showScores() {
   console.log("Scores :-", quiz.score);
+  let gameOverHTML = "<h1>Result</h1>";
+  gameOverHTML += `<h2 id='score'> Your Scores:- ${
+    quiz.score
+  } and mark percentage is :- ${(quiz.score / questions.length) * 100}% </h1>`;
+  document.getElementById("quiz").innerHTML = gameOverHTML;
 }
 
 function loadQuestions() {
@@ -58,13 +63,21 @@ function loadQuestions() {
     questionEle.innerHTML = curQuest.text;
 
     //Show current question's options
-    let options = curQuest.options;
-    for (let i = 0; i < options.length; i++) {
+    let options = quiz.getQuestion().options;
+    for (var i = 0; i < options.length; i++) {
+      let currOption = options[i];
       let eachOptElement = document.getElementById("choice" + i);
-      eachOptElement.innerHTML = options[i];
-      handleOptionBtn("btn" + i, options[i]);
+      eachOptElement.innerHTML = currOption;
+      handleOptionBtn("btn" + i, currOption);
     }
+    showProgress();
   }
+}
+
+function showProgress() {
+  let curQuestNumber = quiz.currQuestIndex + 1;
+  let progress = document.getElementById("progress");
+  progress.innerHTML = `Question ${curQuestNumber} of ${quiz.questions.length}`;
 }
 
 function handleOptionBtn(btnId, choice) {
