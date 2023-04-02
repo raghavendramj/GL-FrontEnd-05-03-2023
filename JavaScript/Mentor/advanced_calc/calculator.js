@@ -35,3 +35,60 @@ function compute() {
     dispInput.innerText = "Error";
   }
 }
+
+function clearDisplay() {
+  console.log("Clear invoked!");
+  dispInput.innerText = "";
+}
+
+function deleteCharacter() {
+  if (dispInput.innerText) {
+    dispInput.innerText = display.innerText.substring(
+      0,
+      display.innerText.length - 1
+    );
+  }
+}
+
+function squareRoot() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = Math.sqrt(dispInput.innerText);
+}
+
+function sqaure() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = dispInput.innerText * dispInput.innerText;
+}
+
+function cubeRoot() {
+  if (dispInput === "") alert("Please enter some value!");
+  else {
+    var curr = dispInput.innerText;
+    dispInput.innerText = curr * curr * curr;
+  }
+}
+
+function exponent() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = Math.exp(dispInput.innerText);
+}
+
+function log() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = Math.log(dispInput.innerText);
+}
+
+function sin() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = Math.sin(dispInput.innerText);
+}
+
+function tan() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = Math.tan(dispInput.innerText);
+}
+
+function cos() {
+  if (dispInput === "") alert("Please enter some value!");
+  else dispInput.innerText = Math.cos(dispInput.innerText);
+}
