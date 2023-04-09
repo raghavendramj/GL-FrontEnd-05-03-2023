@@ -398,15 +398,55 @@ const foodItem = [
   },
 ];
 
-
-function getCategoryItems(category){
-    let foodItemFilterCallBack = item => item.category === category;
-    let categoryData = foodItem.filter(foodItemFilterCallBack);
-    console.log("Category :- ", category, " :- ", categoryData); 
+function getCategoryItems(category) {
+  let foodItemFilterCallBack = (item) => item.category === category;
+  let categoryData = foodItem.filter(foodItemFilterCallBack);
+  //console.log("Category :- ", category, " :- ", categoryData);
+  return categoryData;
 }
 
-getCategoryItems("paneer");
+// getCategoryItems("paneer");
 
 function displayItems() {
-  let biryani = document.getElementById("biryani");
+    let biryani = document.getElementById("biryani");
+  let biryaniData = getCategoryItems("biryani");
+
+  biryaniData.map((item) => {
+    let itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    let cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+
+    let stars = document.createElement("i");
+    stars.setAttribute("class", "fa fa-star");
+    stars.setAttribute("id", "rating");
+    stars.innerText = "" + item.rating; //JSON Data
+
+    let likeHeart = document.createElement("i");
+    likeHeart.setAttribute("class", "fa fa-heart-o");
+    likeHeart.setAttribute("id", item.id); //JSON Data
+
+    cardTop.appendChild(stars);
+    cardTop.appendChild(likeHeart);
+
+    let image = document.createElement("img");
+    image.src = item.img; //JSON Data
+
+    let itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name; //JSON Data
+
+    let itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = "Price:- $" + item.price; //JSON Data
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(image);
+    itemCard.appendChild(itemName);
+    itemCard.appendChild(itemPrice);
+
+    biryani.appendChild(itemCard);
+  });
 }
+displayItems();
