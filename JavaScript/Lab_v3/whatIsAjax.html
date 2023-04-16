@@ -1,0 +1,77 @@
+<html>
+  <head>
+    Ajax Introduction
+  </head>
+  <body>
+    <h1>AJAX Introduction</h1>
+    <p>Asynchronous JavaScript And XML</p>
+    <p>Ajax is not a programming language</p>
+    <p>Ajax just uses a combination of</p>
+    <ul>
+      <li>Browser built in XMLHttpRequest Object</li>
+      <li>To request the data from a Web Server!</li>
+      <li>JavaScript and HTML DOM</li>
+      <li>to display or use the data</li>
+    </ul>
+
+    <h2>How AJAX Communication happens?</h2>
+    <ol>
+      <li>
+        An event occurs in a web page (the page is loaded, a button is clicked)
+      </li>
+      <li>An XMLHttpRequest object is created by JavaScript</li>
+      <li>The XMLHttpRequest object sends a request to a web server</li>
+      <li>The server processes the request</li>
+      <li>The server sends a response back to the web page</li>
+      <li>The response is read by JavaScript</li>
+      <li>Proper action (like page update) is performed by JavaScript</li>
+    </ol>
+    <!-- UI -> Request(XMLHttpRequest) -> BackEnd UI ->
+    Response(HttpStatus===200&&readstate=4) <- BackEnd -->
+
+    <h2>HTTP Methods</h2>
+    <ol>
+      <li>
+        <ol type="a">
+          <li>GET :- Get the results from backend</li>
+          <li>URL:- <a href="">http://localhost:8080/users</a></li>
+          <li>DATABASE Query:- select * from user;</li>
+          <li>HTTP Response :- [{id:1, "raghav"}, {id:2, "keshav"}, {id:3, "madhav"}]</li>
+          <li>HTTP Status Code :- Sucess :-  200</li>
+          <li>HTTP Status Code :- Failure :-  500 / 400 etc..</li>
+
+        </ol>
+      </li>
+      <li>
+        <ol type="a">
+          <li>POST :- Create a record in the backend</li>
+          <li>URL:- <a href="">http://localhost:8080/users</a> + RequestBody[{id:1, "raghav"}] </li>
+          <li>DATABASE Query:- insert into table user(id, name) values(3, "thilak");</li>
+          <li>HTTP Response :- [{id:1, "raghav"}]</li>
+          <li>HTTP Status Code :- Sucess :-  201</li>
+          <li>HTTP Status Code :- Failure :-  500 / 400 etc..</li>
+        </ol>
+      </li>
+      <li>
+        <ol type="a">
+          <li>PUT :- Modify a record in the backend</li>
+          <li>URL:- <a href="">http://localhost:8080/users/1</a> + RequestBody[{id:1, "raghavendra"}] </li>
+          <li>DATABASE Query:- update user set name="raghavendra" where id=1</li>
+          <li>HTTP Response :- [{id:1, "raghavendra"}]</li>
+          <li>HTTP Status Code :- Sucess :-  200</li>
+          <li>HTTP Status Code :- Failure :-  500 / 400 etc..</li>
+        </ol>
+      </li>
+      <li>
+        <ol type="a">
+          <li>DELETE :- delete a record in the backend</li>
+          <li>URL:- <a href="">http://localhost:8080/users/5</a></li>
+          <li>DATABASE Query:- delete user where id=5</li>
+          <li>HTTP Response :- [{id:5, "shanthanu"}]</li>
+          <li>HTTP Status Code :- Sucess :-  200</li>
+          <li>HTTP Status Code :- Failure :-  500 / 400 etc..</li>
+        </ol>
+      </li>
+    </ol>
+  </body>
+</html>

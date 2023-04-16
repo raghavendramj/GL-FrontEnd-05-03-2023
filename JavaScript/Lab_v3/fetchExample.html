@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Fetch Example</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function loadPosts() {
+        let postsPromise = fetch("https://jsonplaceholder.typicode.com/posts");
+        postsPromise
+          .then((resp) => resp.json())
+          .then((resp) => printPostsInUI(resp));
+      }
+
+      function printPostsInUI(posts) {
+        console.log("Success! Response :- ", posts);
+
+        let postsHTMLArray = posts.map((eachPost) => {
+          return `<tr>
+                        <td>${eachPost.userId}</td>
+                        <td>${eachPost.id}</td>
+                        <td>${eachPost.title}</td>
+                        <td>${eachPost.body}</td>
+                    <tr>`;
+        });
+
+        let postsHTMLStr = postsHTMLArray.join("");
+        document.querySelector("tbody").innerHTML = postsHTMLStr;
+        document.querySelector("#loadBtn").style.display = "none";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Fetch Example</h2>
+
+      <button id="loadBtn" class="btn btn-primary" onclick="loadPosts()">
+        Load Posts
+      </button>
+      <table class="table table-striped">
+        <thead>
+          <th>UserId</th>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+</html>
