@@ -2,7 +2,6 @@ import Product from "./product";
 
 function Main(props) {
     const { products, onAdd } = props;
-    console.log("products -> ", products);
 
     return (
         <main className="block col-2">

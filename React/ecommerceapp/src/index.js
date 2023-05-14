@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import "bootstrap/dist/css/bootstrap.min.css"; 
+// import "bootstrap/dist/css/bootstrap.min.css"; 
 import Login from "./components/Login";
 import "./App.css";
+import "./index.css";
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import Home from "./components/home";
 

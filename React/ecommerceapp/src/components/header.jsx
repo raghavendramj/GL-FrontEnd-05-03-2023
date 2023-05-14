@@ -1,4 +1,4 @@
-function Header() {
+function Header(props) {
     return ( 
         <header className="block row center">
         <div>
@@ -9,6 +9,7 @@ function Header() {
         <div className="floatRight">
             <a href="">
                 Cart
+                {props.itemsCount ? <button className="badge">{props.itemsCount}</button> : ''}
             </a>
             {'  '}
             <a href="">
