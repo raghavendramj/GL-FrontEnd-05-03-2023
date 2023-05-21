@@ -41,4 +41,31 @@ How to install bootstrap is  :-
 </form>
 
 
+	
+	
+React Router
+	Routing is a process in which a user is directed to different pages based on their action or request
+	ReactJS Router is mainly used for developing Single Page Web Applications.
+	React Router is used to define multiple routes in the application.
+	When a user types a specific URL into the browser, and if this URL path matches any 'route' inside the router file, the user will be redirected to that particular route.
+
+React contains three different packages for routing. These are:
+	react-router: It provides the core routing components and functions for the React Router applications.
+	react-router-native: It is used for mobile applications.
+	react-router-dom: It is used for web applications design.
+	
 	npm install react-router-dom --save
+
+
+
+
+Assignment :- 
+Books
+	-> 10 Books ->  [{id: 1, name: bookName, publisher: somePublisher, year: 2023}]
+	BookList
+	-> List books 
+			-> table -> 10 books -> id | name | publisher | year | ...
+		-> localhost:8080/books
+		-> localhost:8080/books/1 
+				-> List only book  id | name | publisher | year | ...
+	
